@@ -9,13 +9,13 @@ def home():
 
 @app.route("/metrics")
 def metrics():
-    metric_value = random.randint(1,100)
-    
-    data = f"""
+    value = random.randint(1,100)
+
+    data = f'''
 # HELP random_metric Random metric value
 # TYPE random_metric gauge
-random_metric {metric_value}
-"""
+random_metric {value}
+'''
     return Response(data, mimetype="text/plain")
 
 if __name__ == "__main__":
